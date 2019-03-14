@@ -37,5 +37,7 @@ header div{
     left:800px;
     bottom:25px;
     background-color: white;
+    cursor: pointer;
 }
+
 

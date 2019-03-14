@@ -46,14 +46,19 @@ form div{
     width:90px;
     height: 40px;
     border-radius:5px;
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(54, 194, 58); /* Green */
     border: none;
     color: white;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
+    opacity: 0.7;
 }
 
+#button:hover{
+    opacity: 1;
+}
 h2{
     position: relative;
     bottom: 30px;   

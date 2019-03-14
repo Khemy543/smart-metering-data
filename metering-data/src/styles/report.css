@@ -7,7 +7,7 @@
     height: 70px;
     width: 950px;
     top:85px;
-    left:250px;
+    left:294px;
     background-color: white;
     border: 1px solid rgb(196, 194, 194);
    
@@ -24,32 +24,35 @@
 
 #selecter{
     position: relative;
-    padding-left: 30px;
-    height: 40px;
-    width: 70px;
+    left: 30px;
+    
     top:30px;
+    cursor: pointer;
 }
 
 #from{
     position: relative;
     left:250px;
-    bottom:28px;
+    bottom:15px;
+    
 }
 
 #to{
     position: relative;
     left:480px;
-    bottom:70px;
+    bottom:60px;
+    
 
 }
 #btn{
     position: relative;
     height: 30px;
     width:70px;
-    border-radius: 3px;
+    border-radius: 5px;
     float: right;
-    bottom: 96px;
+    bottom: 90px;
     right: 170px;
+    cursor: pointer;
     }
 
 [type = "date"]{
@@ -96,9 +99,8 @@ select{
     height: 532px;
     width:952px;
     background-color: white;
-    margin-left:330px;
-    top: 150px;
-    right: 50px;
+    margin-left:294px;
+    margin-top: 150px;
 }
 
 table {

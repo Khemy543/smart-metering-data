@@ -1,8 +1,5 @@
 import React from 'react';
 import { Form } from 'antd';
-import { Menu, Switch } from 'antd';
-import { Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import '../styles/loginpage.css';
 
 class login extends React.Component {
@@ -13,18 +10,18 @@ class login extends React.Component {
                     <form>
                         <h2>Login </h2>
                         <div className="Username">
-                            <input type="text" placeholder="Username" id="username" />
+                            <input type="text" placeholder="Username" id="username" required/>
                         </div>
 
                         <div className="password">
-                            <input type="password" placeholder="Password" id="password" />
+                            <input type="password" placeholder="Password" id="password" required/>
                         </div>
 
                         <div className="checkbox">
-                            <a href="#">Forgot password</a>
+                            <a href="#">Forgot password?</a>
                         </div>
                         <div className="button">
-                            <input type="button" id="button" value="Login" />
+                            <button type="submit" id="button">Login</button>
                         </div>
                     </form>
 

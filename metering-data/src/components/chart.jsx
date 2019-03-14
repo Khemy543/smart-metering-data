@@ -18,16 +18,15 @@ class chart extends React.Component {
                             417594,
                             181045,
                             253060,
-                            106519
+                            300000
                         ],
 
                         backgroundColor: [
                             '#151719',
-                            '#151719',
-                            '#151719',
-                            '#151719',
-                            '#151719',
-                            '#151719'
+                            '#ff0000',
+                            '#3002f8',
+                            '#00fc4c'
+                            
 
                         ]
                     }
@@ -44,7 +43,7 @@ class chart extends React.Component {
     render() {
         return (
             <div className="chart">
-                <Line
+                <Bar
                     data={this.state.chartData}
                     options={{
                         title: {
@@ -53,7 +52,7 @@ class chart extends React.Component {
                             fontSize: 25
                         },
                         legend: {
-                            display: this.props.displayLegend,
+                           display: this.props.displayLegend,
                             position: 'right'
                         }
                     }}

@@ -18,19 +18,19 @@ class report extends React.Component {
         <Header />
         <div className="content">
           <Slider />
-          
+          <div id = "reportsheet">
           <Reportsheet ref={el => (this.componentRef = el)} />
+          </div>
 
           <div id="generator">
-            <div id="selecter">
-              <select name="Select Node">
+              <select name="Select Node" id="selecter">
                 <option value="All nodes">All Nodes</option>
                 <option value="Node 1">Node 1</option>
                 <option value="Node 2">Node 2</option>
                 <option value="Node 3">Node 3</option>
                 <option value="Node 4">Node 4</option>
               </select>
-            </div>
+            
 
             <div id="from">
               <label for="Start">Start Date</label>
@@ -42,10 +42,10 @@ class report extends React.Component {
               <input type="date" />
             </div>
 
-            <input type="button" value="Generate" id="btn" />
+            <button type="submit" id="btn">Generate</button>
             <div>
             <ReactToPrint
-            trigger={() => <Link to="#" style={{ left: "850px", position: "relative", top: "-96px", listStyle: "none" }}><input type="button" value="Print" style={{height:"30px", width:"60px" }} /></Link>}
+            trigger={() => <Link to="#" style={{ left: "850px", position: "relative", top: "-90px", listStyle: "none"}}><input type="button" value="Print" style={{height:"30px", width:"60px" , cursor:"pointer" }} /></Link>}
             content={() => this.componentRef}
           />
           </div>
