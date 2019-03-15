@@ -15,15 +15,16 @@ class about extends React.Component {
 
                     <div className="text" style={{
 
-                        backgroundColor: "white",
+                        
                         width: "1030px",
                         height: "570px",
                         marginLeft: "280px",
                         top: "110px",
                         position: "relative"
                     }}>
-                        <h1> Remote Metering Data</h1>
+                        <h1 style={{marginLeft:"300px"}}> Remote Metering Data</h1>
 
+                           
                         <p>GROUP MEMBERS</p>
                         <p> 1.	EMMANUEL OWUSU AFREYIE</p>
                         <p>2.	GIDEON ASSAFUAH</p>

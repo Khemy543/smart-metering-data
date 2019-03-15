@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form , Icon, Dropdown, Menu}  from 'antd';
+import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import '../styles/header.css'
 
@@ -35,7 +36,9 @@ class header extends React.Component {
         </div>
 
         <div className="icons">
-        <Icon type="plus" style={{ paddingLeft: "20px", backgroundColor: "white", fontSize: "17px" }} onClick={this.props.onAddNode} />
+        <Link to="/registernode" style={{color:"#242424"}}>
+        <Icon type="plus" style={{ paddingLeft: "20px", backgroundColor: "white", fontSize: "17px" }} /*onClick={this.props.onAddNode}*/ />
+        </Link>
         <Icon type="mail" style={{ paddingLeft: "20px", backgroundColor: "white", fontSize: "17px" }} />
 
         <Dropdown overlay={menu} trigger={['click']}>

@@ -59,7 +59,7 @@ class addnode extends React.Component {
                         <div className="r2">
                         <div id ="item" style={{position:"relative", top:"15px"}}>
                             <label>Email</label>
-                            <Input placeholder="Email" style={{width: "230px", marginTop:"5px"}}/>
+                            <Input placeholder="Email" type="email" style={{width: "230px", marginTop:"5px"}}/>
                             </div>
                         <div id ="item" style={{marginLeft:"70px" ,position:"relative", top:"15px"}}>
                             <label>Postal Address</label>
