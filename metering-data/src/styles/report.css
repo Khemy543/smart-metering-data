@@ -22,37 +22,27 @@
    display: flex;
 }
 
-#selecter{
+#selector{
     position: relative;
     left: 30px;
     
-    top:30px;
+    top:20px;
     cursor: pointer;
 }
 
-#from{
+#date{
     position: relative;
-    left:250px;
-    bottom:15px;
+    left:220px;
+    top:-15px;
     
 }
 
-#to{
-    position: relative;
-    left:480px;
-    bottom:60px;
-    
-
-}
 #btn{
     position: relative;
-    height: 30px;
-    width:70px;
-    border-radius: 5px;
     float: right;
-    bottom: 90px;
-    right: 170px;
-    cursor: pointer;
+    bottom: 12px;
+    right: 190px;
+    
     }
 
 [type = "date"]{
