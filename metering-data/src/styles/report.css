@@ -5,8 +5,8 @@
 #generator{
     position: fixed;
     height: 70px;
-    width: 950px;
-    top:85px;
+    width: 952px;
+    top:83px;
     left:294px;
     background-color: white;
     border: 1px solid rgb(196, 194, 194);
@@ -40,7 +40,7 @@
 #btn{
     position: relative;
     float: right;
-    bottom: 12px;
+    bottom: 16px;
     right: 190px;
     
     }

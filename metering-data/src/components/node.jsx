@@ -49,6 +49,7 @@ class node extends React.Component {
             strokeWidth="5"
             sqSize="200"
             percentage={this.state.percentage} />
+           
         </div>
       </div>
     );

@@ -6,7 +6,7 @@ import { Slider } from '../components/slider';
 import { Reportsheet } from '../components/reportsheet';
 import ReactToPrint from "react-to-print";
 import '../styles/report.css';
-import Sider from 'antd/lib/layout/Sider';
+
 
 const {  RangePicker } = DatePicker;
 
@@ -50,7 +50,7 @@ class report extends React.Component {
             <Button id = "btn">Generate</Button>
             <div>
             <ReactToPrint
-            trigger={() => <Link to="#" style={{ left: "850px", position: "relative", top: "-40px", listStyle: "none"}}><input type="button" value="Print" style={{height:"30px", width:"60px" , cursor:"pointer", color:"#575656"}} /></Link>}
+            trigger={() => <Link to="#" style={{ left: "850px", position: "relative", top: "-46px", listStyle: "none"}}><input type="button" value="Print" style={{height:"30px", width:"60px" , cursor:"pointer", color:"#575656"}} /></Link>}
             content={() => this.componentRef}
           />
           </div>

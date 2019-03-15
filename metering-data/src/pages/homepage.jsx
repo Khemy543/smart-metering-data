@@ -27,7 +27,7 @@ class homepage extends React.Component {
             {renderNodes}
           </div>
         </div>
-      </div>
+      </div> 
     );
   }
 
