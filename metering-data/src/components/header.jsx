@@ -11,7 +11,7 @@ const menu = (
       <a href="#">Account</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="#">Web Stats</a>
+      <a href="#">Settings</a>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">
@@ -25,10 +25,13 @@ class header extends React.Component {
   render() {
     return (
       <header className="header">
-
-        <div>
+       
+        <div id = "logo">
+        
           <h1>METERING DATA</h1>
+                    
         </div>
+       
         
 
         <div className="search">

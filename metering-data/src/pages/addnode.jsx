@@ -69,11 +69,11 @@ class addnode extends React.Component {
 
                         </div>
                         <div className="radio">
-                        <Select defaultValue="lucy" style={{ width: 150 , marginTop:"5px"}} onChange={handleChange}>
-                        <Option value="jack">
+                        <Select defaultValue="private" style={{ width: 150 , marginTop:"5px"}} onChange={handleChange}>
+                        <Option value="private">
                         <Icon type="lock" />  Private
                         </Option>
-                        <Option value="lucy">
+                        <Option value="company">
                         <Icon type="book" />   Company
                         </Option>
                         </Select>

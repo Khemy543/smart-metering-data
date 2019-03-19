@@ -7,7 +7,7 @@
     box-shadow: 7px 7px 5px 0px rgba(175, 174, 174, 0.75);
     border-top: 3px solid #f7f7f7;
     position: relative;
-       
+    cursor: pointer;       
 }
 
 .text-center li{
@@ -24,3 +24,8 @@
     left: 50px;
     bottom:20px;
 }
+
+.node:hover{
+    background-color: rgba(202, 202, 202, 0.775);
+
+} 

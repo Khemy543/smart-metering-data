@@ -41,9 +41,10 @@ class node extends React.Component {
 
   render() {
     return (
-
+      <div>
+        <Link to="/nodepage">
       <div className="node">
-        <h3 class="text-center" style={{ margin: "5px 10px" }}><Link to="/nodepage" style={{ listStyle: "none" }}>Node Name</Link></h3>
+        <h3 class="text-center" style={{ margin: "5px 10px" }}>Node Name</h3>
         <div class="text-center" id="app">
           <CircularProgressBar
             strokeWidth="5"
@@ -51,6 +52,8 @@ class node extends React.Component {
             percentage={this.state.percentage} />
            
         </div>
+      </div>
+      </Link>
       </div>
     );
   }
