@@ -46,10 +46,11 @@ class nodepage extends React.Component {
   render() {
     return (
       <div className="node-body">
-        <Header />
-
+      <div>
+       <Header />
         <Slider />
-          <div className="content">
+       </div>
+           <div className="content">
             <div className="info">
               <div id="contact" style={{
                 width: "480px",
@@ -155,8 +156,9 @@ class nodepage extends React.Component {
 
               />
             </div>
+            </div>
           </div>
-        </div>
+        
 
       );
   }
