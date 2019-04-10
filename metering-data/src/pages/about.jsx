@@ -10,7 +10,11 @@ class about extends React.Component {
         return (
             <div className="body">
                 <Header />
-                <div className="content">
+                <div className="content"
+                style={{
+                    display:"block"
+                }}
+                >
                     <Slider />
 
                     <div className="text" style={{
@@ -35,6 +39,15 @@ class about extends React.Component {
             </p>
 
                     </div>
+                    <div style={{
+                        borderTop:"1px solid rgb(143, 142, 142)",
+                        width:"1100px",
+                        height:"80px",
+                        marginLeft:"230px",
+                    }}>
+                    
+
+                        </div>
                 </div>
             </div>
         );

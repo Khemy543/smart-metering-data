@@ -16,7 +16,7 @@ header div{
     color:#242424;
     position: relative;
     padding-top:15px; 
-    padding-left:120px;
+    padding-left:80px;
     background-color: white;
 }
 
@@ -24,7 +24,7 @@ header div{
     background-color: rgb(255, 255, 255);
     position: relative;
     left:550px;
-    bottom: 25px;
+    bottom: 45px;
 }
 
 #search{
@@ -37,11 +37,28 @@ header div{
 .icons{
     position: relative;
     left:800px;
-    bottom:25px;
+    bottom:45px;
     background-color: white;
     cursor: pointer;
 }
 
-#logo a{
+#logo {
     text-decoration: none;
+    display: block;
+    height: 70px;
+    width: 450px;
+     
+}
+
+#logo h1{
+    font-size: 25px;
+    margin-bottom: 15x;
+}
+
+#logo h3{
+   font-size: 13px;
+   position: relative;
+   bottom: 18px;
+   left: 65px;
+
 }

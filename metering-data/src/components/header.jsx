@@ -6,16 +6,16 @@ import '../styles/header.css'
 
 
 const menu = (
-  <Menu>
+  <Menu style={{ paddingTop:"40px"}}>
     <Menu.Item key="0">
-      <a href="#">Account</a>
+      <Link to="#">Account</Link>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="#">Settings</a>
+      <Link to="/settings">Settings</Link>
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="3">
-    <a href="#">Log Out</a>
+    <Menu.Item key="2">
+    <Link to="#">Log Out</Link>
     </Menu.Item>
   </Menu>
 );
@@ -29,6 +29,7 @@ class header extends React.Component {
         <div id = "logo">
         
           <h1>METERING DATA</h1>
+          <h3>Remote monitoring of metering data</h3>
                     
         </div>
        
@@ -46,7 +47,7 @@ class header extends React.Component {
 
         <Dropdown overlay={menu} trigger={['click']}>
         <a className="ant-dropdown-link" href="#" style={{color:"#242424"}}>
-        <Icon type="user" style={{ paddingLeft: "20px", backgroundColor: "white", fontSize: "17px" }} />
+        <Icon type="user" style={{ paddingLeft: "20px",  fontSize: "17px" }} />
         </a>
   </Dropdown>
                
