@@ -7,35 +7,64 @@ import { Header } from '../components/header';
 import { Node } from '../components/node';
 import { Slider } from '../components/slider';
 import '../styles/homepage.css';
+import axios from 'axios';
+import Item from 'antd/lib/list/Item';
 
 
+//const axios = require('axios')
+
+const getAllNodesFromServer = async () => {
+  try {
+    const res = await
+    axios.get('https://project-backend-knust.herokuapp.com/nodeFL')
+    return res.data;
+
+  } catch (error) {
+  console.error(error)
+  }
+}
 
 class homepage extends React.Component {
   state = {
-    nodes: [1, 2, 3, 4]
-  };
+    nodes: []
+    };
 
   render() {
-    const renderNodes = this.state.nodes.map((node, index) => <Node key={index} />);
+    console.log(this.state)
+    const newNodes = this.state.nodes.map(item => (
+      
+    <Node {...this.props} key={item.ID} flowRate={item.Flowrate} MeterID={item.Meter_ID} litres={item.Liters}/>
+    
+  ));
+
+ 
 
     return (
       <div className="home-body">
-        <Header onAddNode={this.handleAddNode} />
+        <Header />
         <div className="main">
           <Slider />
           <div className="main-content">
-            {renderNodes}
+            <React.Fragment>
+              {newNodes}
+            </React.Fragment>  
           </div>
         </div>
       </div> 
     );
   }
 
-  handleAddNode = () => {
+  componentDidMount(){
+    getAllNodesFromServer()
+    .then(data => this.setState({nodes:data ? data : []}))
+   
+   }
+
+  /*handleAddNode = () => {
     this.setState({
       nodes: [...this.state.nodes, 1]
     });
 
-  };
+  };*/
 }
 export const Homepage = Form.create()(homepage);

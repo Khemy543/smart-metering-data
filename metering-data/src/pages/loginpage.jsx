@@ -67,10 +67,11 @@ class login extends React.Component {
 		// 	'Username': 'Dopant',
 		// 	'Password' : '1105'
 		// };
-		post('http://localhost:5000/login', {
+		post('https://project-backend-knust.herokuapp.com/login', {
 			userName, password
 		}).then(res => {
 			if(res.status === 201){
+				alert("Successful Login");
 				this.props.history.push('/homepage');
 			}
 			else{
@@ -119,7 +120,7 @@ class login extends React.Component {
 						<div className="email">
 							<input
 								type="text"
-								placeholder="input"
+								placeholder="Username"
 								id="UserName"
 								name="UserName"
 								onChange={this.onChange}

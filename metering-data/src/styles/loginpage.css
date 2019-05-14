@@ -23,14 +23,14 @@ form{
     
 }
 
-#username{
+#UserName{
     width:300px;
     border: 1px solid rgb(182, 182, 182);
     height: 30px;
     border-radius: 5px;
 }
 
-#password{
+#Password{
     width:300px;
     border: 1px solid rgb(182, 182, 182);
     height:30px;

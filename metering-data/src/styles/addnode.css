@@ -18,10 +18,9 @@
 
 .form{
     
-    margin-top: 110px;
-    width: 600px;
+    margin-top: 90px;
     height: 570px; 
-    margin-left: 400px;
+    margin-left: 350px;
 }
 
 .heading{
@@ -30,10 +29,6 @@
     margin-top: 30px;
 }
 
-h2{
-   
-
-}
 
 .user_info{
     height: 85px;
@@ -66,13 +61,13 @@ h2{
     
 }
 
-.radio{
-    margin-top: 20px;
-    height: 65px;
-    display: block;
-    border-bottom: 1px solid rgb(143, 142, 142);
-   
+.r3 #item{
+    float: left;
+    
 }
+
+
+
 
  
 

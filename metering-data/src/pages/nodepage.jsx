@@ -4,7 +4,19 @@ import { Header } from '../components/header';
 import { Slider } from '../components/slider';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import '../styles/nodepage.css';
+import axios from 'axios';
 
+const getNodeDetails = async (id) => {
+  try {
+        const res = await axios.get('https://project-backend-knust.herokuapp.com/nodeDetails/'+id)
+    return res.data;
+
+  } catch (error) {
+  console.error(error)
+  }
+}
+
+ 
 
 class nodepage extends React.Component {
 
@@ -12,7 +24,7 @@ class nodepage extends React.Component {
     super(props);
     this.state = {
       chartData: {
-        labels: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+        labels: ['0', '1', '2', '3', '4', '5', '6'],
         datasets: [
           {
             label: 'Nodes',
@@ -33,7 +45,12 @@ class nodepage extends React.Component {
             ]
           }
         ]
-      }
+      },
+      Owners_Name: "",
+      Location: "",
+      Mobile:"",
+      Email:"",
+      Address: ""
     }
   }
 
@@ -60,24 +77,24 @@ class nodepage extends React.Component {
                 marginLeft: "30px"
               }}>
                 <label>Owner's name </label>
-                <h2 style={{ marginTop: "30px" }}>Mr . Goerge Ando</h2>
+                <h2 style={{ marginTop: "30px" }}>{this.state.Owners_Name}</h2>
 
                 <label>Meter ID </label>
-                <h2 style={{ marginTop: "30px" }}>NO. 412CD</h2>
+                <h2 style={{ marginTop: "30px" }}>{this.props.location.state.meterId}</h2>
 
                 <label>Location </label>
-                <h2 style={{ marginTop: "30px" }}>Ayeduase, jasmine street, hno. 412 </h2>
+                <h2 style={{ marginTop: "30px" }}>{this.state.Location} </h2>
               </div>
 
-              <div id="contact" style={{ marginLeft: "50px", marginTop: "10px" }}>
-                <label>mobile </label>
-                <h2 style={{ marginTop: "30px" }}>0542161579</h2>
-
+              <div id="contact" style={{ marginLeft: "40px", marginTop: "10px" }}>
                 <label>Email</label>
-                <h2 style={{ marginTop: "30px" }}>andoj@gmail.com</h2>
+                <h2 style={{ marginTop: "30px" }}>{this.state.Email}</h2>
+
+                <label>mobile</label>
+                <h2 style={{ marginTop: "30px" }}>{this.state.Mobile}</h2>
 
                 <label>postal address </label>
-                <h2 style={{ marginTop: "30px" }}>1001 </h2>
+                <h2 style={{ marginTop: "30px" }}>{this.state.Address}</h2>
               </div>
 
             </div>
@@ -91,10 +108,10 @@ class nodepage extends React.Component {
               }}>
                 <Progress type="circle" style={{
                   marginLeft: "75px",
-                  marginTop: "30px"
+                  marginTop: "30px",
 
                 }}
-                percent={75}
+                percent={this.props.location.state.litres}
                 format={percent => `${percent} Litres`}
                  width={180}
                 />
@@ -112,8 +129,8 @@ class nodepage extends React.Component {
                   marginLeft: "75px",
                   marginTop: "30px"
                 }} 
-                percent={75}
-                format={percent => `${percent} LPM`}
+                percent={this.props.location.state.flowRate}
+                format={percent => `${percent} %`}
                 width={180}
                 />
               </div>
@@ -145,7 +162,7 @@ class nodepage extends React.Component {
                 options={{
                   title: {
                     display: this.props.displayTitle,
-                    text: 'Node Name',
+                    
                     fontSize: 25
                   },
                   legend: {
@@ -162,5 +179,23 @@ class nodepage extends React.Component {
 
       );
   }
+  componentDidMount(){
+    console.log(this.props.location.state)
+    if (!this.props.location.state.meterId) {
+      this.props.history.push('/homepage')
+      return;
+    }
+    getNodeDetails(this.props.location.state.meterId).then(([data]) => this.setState({
+      Owners_Name:data.Owners_Name,
+      Location:data.Location, 
+      Mobile:data.Mobile,
+      Email:data.Email,
+      Address:data.Address
+      } ))
+    ;
+   console.log(this.props.MeterID);
+   
+   }
+
 }
 export const Nodepage = Form.create()(nodepage);

@@ -1,8 +1,20 @@
 import React from 'react';
-import { Form , Icon, Dropdown, Menu}  from 'antd';
+import { Form , Icon, Dropdown, Menu, Popconfirm, message}  from 'antd';
 import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import '../styles/header.css'
+
+
+function confirm(e) {
+  console.log(e);
+  message.success('Click on Yes');
+  }
+
+function cancel(e) {
+  console.log(e);
+  message.error('Click on No');
+}
+
 
 
 const menu = (
@@ -15,7 +27,9 @@ const menu = (
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="2">
-    <Link to="#">Log Out</Link>
+    <Popconfirm title="Are you sure you want to logout?" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
+    <Link to="/">Log Out</Link>
+    </Popconfirm>
     </Menu.Item>
   </Menu>
 );

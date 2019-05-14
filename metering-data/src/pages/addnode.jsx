@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form , Input , Select,  Row, Col, Icon, Button} from 'antd';
+import { Form , Input , Select, Row, Col, Icon, Button}  from 'antd';
 import { Header } from '../components/header';
 import { Slider } from '../components/slider';
 import '../styles/addnode.css'
@@ -24,28 +24,18 @@ async function post(url, data) {
 
 
 
-
-const InputGroup = Input.Group;
-
-const Option = Select.Option;
-
-function handleChange(value) {
-  console.log(`selected ${value}`);
-}
-
-
 class addnode extends React.Component {
+
     constructor() {
 		super();
 		this.state = {
-            Owners_Name :'',
-            Meter_ID : '',
-            Location :'',
-            Mobile : '',
-            Email :'',
-            Address : '',
-            Time : ''
-		};
+            Owners_Name : "",
+            Meter_ID : "",
+            Location : "",
+            Mobile : "",
+            Email : "",
+            Address : ""
+            };
     }
     
     onChange = e => {
@@ -59,7 +49,7 @@ class addnode extends React.Component {
 		e.persist();
 		e.preventDefault();
 		console.log(e);
-		const { Owners_Name: Owners_Name, Meter_ID: Meter_ID,Location:Location,Mobile:Mobile,Email:Email,Adress:Adress,Time:Time } = this.state;
+		const { Owners_Name : Owners_Name, Meter_ID : Meter_ID,Location : Location,Mobile : Mobile , Email : Email , Address : Address}= this.state;
 		
 		var config = {
 				headers:{
@@ -68,9 +58,15 @@ class addnode extends React.Component {
 		};
 
 		
-		axios.post('http://localhost:5000/newnode', {
-            Owners_Name,Meter_ID,Location,Mobile,Email,Adress,Time
+		axios.post('https://project-backend-knust.herokuapp.com/newnode', {
+            Owners_Name,Meter_ID,Location,Mobile,Email,Address
 		}).then(res => {
+            if(res.status==200){
+                alert("Created Node Successfully");
+                this.props.history.push('/homepage');
+            }
+            else
+            alert("Error");
             console.log(res);
 		}).catch(console.log);
 
@@ -85,7 +81,7 @@ class addnode extends React.Component {
             <Slider />
             <div className="content">
             
-                <div className="form">
+                <form className="form" onSubmit={this.onSubmit} >
                     <div className="heading">
                     
                         <h2>
@@ -98,13 +94,14 @@ class addnode extends React.Component {
                         <div id="item">
                             <label>Owner's Name *</label>
                             <input
-                            type="input"
+                            type="text"
                             style={{width: "230px", marginTop:"5px" }}
                             placeholder="Name"
                             id="Owners_Name"
-                            name="Owners_Namee"
+                            name="Owners_Name"
                             onChange={this.onChange}
                             value={this.state.Owners_Name}
+                            required
                         />
                             
                         </div>    
@@ -118,13 +115,14 @@ class addnode extends React.Component {
                             name="Meter_ID"
                             onChange={this.onChange}
                             value={this.state.Meter_ID}
+                            required
                         />
                             </div>    
                             
                         </div>
                         <div className="contact">
                         <div className="r1">
-                            <div id ="Location">
+                            <div id ="item">
                             <label>Location *</label>
                             <input
                             type="text"
@@ -134,6 +132,7 @@ class addnode extends React.Component {
                             name="Location"
                             onChange={this.onChange}
                             value={this.state.Location}
+                            required
                         />
                             </div>
 
@@ -149,6 +148,7 @@ class addnode extends React.Component {
                             name="Mobile"
                             onChange={this.onChange}
                             value={this.state.Mobile}
+                            required
                         />
                         
                             </div>
@@ -156,11 +156,11 @@ class addnode extends React.Component {
                         </div> 
 
                         <div className="r2">
-                        <div id ="item" style={{position:"relative", top:"15px"}}>
+                        <div id ="item" style={{position:"relative", top:"5px"}}>
                             <label>Email</label>
                             <input
-                            type="text"
-                            style={{width: "230px", marginTop:"5px" }}
+                            type="Email"
+                            style={{width: "230px", marginTop:"0px" }}
                             placeholder="Email"
                             id="Email"
                             name="Email"
@@ -170,11 +170,11 @@ class addnode extends React.Component {
                             </div>
 
 
-                        <div id ="item" style={{marginLeft:"70px" ,position:"relative", top:"15px"}}>
+                        <div id ="item" style={{marginLeft:"70px" ,position:"relative", top:"5px"}}>
                             <label>Postal Address</label>
                             <input
                             type="text"
-                            style={{width: "230px", marginTop:"5px" }}
+                            style={{width: "230px", marginTop:"0px" }}
                             placeholder="Address"
                             id="Address"
                             name="Address"
@@ -185,21 +185,11 @@ class addnode extends React.Component {
                         </div>    
 
                         </div>
-                        <div className="radio">
-                        <Select defaultValue="private" style={{ width: 150 , marginTop:"5px"}} onChange={handleChange}>
-                        <Option value="private">
-                        <Icon type="lock" />  Private
-                        </Option>
-                        <Option value="company">
-                        <Icon type="book" />   Company
-                        </Option>
-                        </Select>
-                        </div>
-                        <button type="submit" id="button" onClick={this.onSumit} style={{ marginTop:"15px" ,backgroundColor:"#1a30fc", color:"white"}}>
+                        <button type="submit" id="button" onClick={this.onSumit} style={{ marginTop:"20px" ,backgroundColor:"#1a30fc", color:"white"}}>
                         Create
                     </button>
                         
-                    </div>
+                    </form>
 
                
             </div>

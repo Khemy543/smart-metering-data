@@ -27,7 +27,7 @@ class node extends React.Component {
     super(props);
 
     this.state = {
-      percentage: 25
+      percentage: {}
     };
 
     this.handleChangeEvent = this.handleChangeEvent.bind(this);
@@ -39,21 +39,25 @@ class node extends React.Component {
     });
   }
 
+  onDetailView = () => {
+    this.props.history.push('/nodepage', {meterId: this.props.MeterID , flowRate: this.props.flowRate, litres:this.props.litres} )
+  }
+
   render() {
     return (
       <div>
-        <Link to="/nodepage">
-      <div className="node">
-        <h3 class="text-center" style={{ margin: "5px 10px" }}>Node Name</h3>
+        {/* <Link to="/nodepage"> */}
+      <div className="node" onClick={this.onDetailView}>
+        <h3 class="text-center" style={{ margin: "5px 10px" , fontSize:"15px"}}>METER_ID :     {this.props.MeterID}</h3>
         <div class="text-center" id="app">
           <CircularProgressBar
             strokeWidth="5"
             sqSize="200"
-            percentage={this.state.percentage} />
+            percentage={this.props.flowRate} />
            
         </div>
       </div>
-      </Link>
+      {/* </Link> */}
       </div>
     );
   }
